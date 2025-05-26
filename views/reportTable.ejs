@@ -1,0 +1,33 @@
+<div class="card-body">
+    <h5 class="card-title">Student List</h5>
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="table-light">
+                <tr>
+                    <th>Student ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Course</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if(studData){ 
+                     studData.forEach((value,i)=>{ %>
+                        <tr>
+                            <td><%= i+1%></td>
+                            <td><%= value.sname %></td>
+                            <td><%= value.email%></td>
+                            <td><%= value.contact %></td>
+                            <td><%= value.cname%></td>
+                        </tr>
+                        <% })
+                }else{ %>
+                    <td colspan="5"><%= "Data Not Found!" %></td>
+                    <%} %>
+                
+                <tr>
+            </tbody>
+        </table>
+    </div>
+</div>
